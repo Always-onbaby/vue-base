@@ -8,17 +8,17 @@
   </div>
 </template>
 <script>
-import TablePane from './tabs/Pane'
-import Tabs from './tabs/Tabs'
-export default {
-  components: {
-    Tabs,
-    TablePane
-  },
-  data() {
-    return {
-      activeKey: '2'
+  import TablePane from './tabs/Pane'
+  import Tabs from './tabs/Tabs'
+  export default {
+    components: {
+      Tabs,
+      TablePane
+    },
+    data() {
+      return {
+        activeKey: '2'
+      }
     }
   }
-}
 </script>

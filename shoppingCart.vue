@@ -42,129 +42,144 @@
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      goodsList: [
-        {
-          name: 'iphone11',
-          price: '2000',
-          count: 0
-        },
-        {
-          name: 'iphone11Max',
-          price: '40000',
-          count: 0
-        },
-        {
-          name: 'iphone11Pro',
-          price: '5000',
-          count: 0
-        },
-        {
-          name: 'iphone11ProMax',
-          price: '9000',
-          count: 0
-        },
-      ]  
-    }
-  },
-  methods: {
-    removeGoods(index) {
-      this.goodsList.splice(index,1)
-    }
-  },
-  computed: {
-    getTotal() {
-      let total = 0
-      this.goodsList.forEach(item => {
-        total+=parseInt(item.price*item.count)
-      })
-      return total.toString().replace(/\B(?=(\d{3})+$)/g,',')
+  export default {
+    data() {
+      return {
+        goodsList: [{
+            name: 'iphone11',
+            price: '2000',
+            count: 0
+          },
+          {
+            name: 'iphone11Max',
+            price: '40000',
+            count: 0
+          },
+          {
+            name: 'iphone11Pro',
+            price: '5000',
+            count: 0
+          },
+          {
+            name: 'iphone11ProMax',
+            price: '9000',
+            count: 0
+          },
+        ]
+      }
+    },
+    methods: {
+      removeGoods(index) {
+        this.goodsList.splice(index, 1)
+      }
+    },
+    computed: {
+      getTotal() {
+        let total = 0
+        this.goodsList.forEach(item => {
+          total += parseInt(item.price * item.count)
+        })
+        return total.toString().replace(/\B(?=(\d{3})+$)/g, ',')
+      }
     }
   }
-}
 </script>
 <style lang="less" scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
-.shoping-cart {
-  width: 60%;
-  border: 1px solid #f7f7f7;
-  margin:  0 auto;
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #f7f7f7;
-    font-size: 14px;
-    &:first-child {
-      background-color: #f7f7f7;
-      // border-top: 0;
-    }
-    .cell {
-      height: 40px;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .shoping-cart {
+    width: 60%;
+    border: 1px solid #f7f7f7;
+    margin: 0 auto;
+
+    .list-item {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      &.cell-index {
-        width: 20px;
+      justify-content: space-between;
+      border-bottom: 1px solid #f7f7f7;
+      font-size: 14px;
+
+      &:first-child {
+        background-color: #f7f7f7;
+        // border-top: 0;
       }
-      &.cell-name {
-        flex: 1;
-      }
-      &.cell-price {
-        width: 100px;
-      }
-      &.cell-count {
-        width: 170px;
-        >span {
-          user-select: none;
+
+      .cell {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.cell-index {
+          width: 20px;
         }
-        .goods-count {
-          padding: 8px;
+
+        &.cell-name {
+          flex: 1;
         }
-        .minus {
-          width: 25px;
-          height: 25px;
-          cursor: pointer;
-          border-radius: 50%;
-          background-color: #f7f7f7;
-          text-align: center;
-          line-height: 25px;
+
+        &.cell-price {
+          width: 100px;
         }
-        .plus {
-          width: 25px;
-          height: 25px;
-          cursor: pointer;
-          border-radius: 50%;
-          background-color: #f7f7f7;
-          text-align: center;
-          line-height: 25px;
+
+        &.cell-count {
+          width: 170px;
+
+          >span {
+            user-select: none;
+          }
+
+          .goods-count {
+            padding: 8px;
+          }
+
+          .minus {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #f7f7f7;
+            text-align: center;
+            line-height: 25px;
+          }
+
+          .plus {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #f7f7f7;
+            text-align: center;
+            line-height: 25px;
+          }
         }
-      }
-      &.cell-other {
-        width: 70px;
-        >span {
-          font-size: 12px;
-          color: #333;
-          cursor: pointer;
-          border: 1px solid #f5f2f0;
-          border-radius: 6px;
-          padding: 0 4px;
-          &.header-cell {
-            border: 0;
+
+        &.cell-other {
+          width: 70px;
+
+          >span {
+            font-size: 12px;
+            color: #333;
+            cursor: pointer;
+            border: 1px solid #f5f2f0;
+            border-radius: 6px;
+            padding: 0 4px;
+
+            &.header-cell {
+              border: 0;
+            }
           }
         }
       }
     }
+
+    .goods-total {
+      height: 40px;
+      line-height: 40px;
+      padding-left: 10px;
+      font-size: 14px;
+    }
   }
-  .goods-total {
-    height: 40px;
-    line-height: 40px;
-    padding-left: 10px;
-    font-size: 14px;
-  }
-}
 </style>

@@ -14,8 +14,12 @@
       }
     },
     render(cr) {
-      let ex = cr('div',{domProps:{innerHTML:this.msg}})
-      return cr('div',[ex,this.$slots.default])
+      let ex = cr('div', {
+        domProps: {
+          innerHTML: this.msg
+        }
+      })
+      return cr('div', [ex, this.$slots.default])
     }
   })
   export default {

@@ -14,7 +14,7 @@ Vue.component('my-component', {
     }
   },
   methods: {
-    handleEvent() {
+  handleEvent() {
       bus.$emit('on-message', this.msg)
     },
   },
