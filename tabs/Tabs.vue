@@ -54,7 +54,7 @@
 				let nav = this.naveList[index]
 				let name = nav.name
 				this.currentValue = name
-				this.$emit('input',name)
+				this.$emit('input', name)
 			}
 		},
 		watch: {
@@ -70,6 +70,11 @@
 <style lang="less" scoped>
 	* {
 		box-sizing: border-box;
+	}
+
+	.tabs {
+		width: 300px;
+		margin: 0 auto;
 	}
 
 	.tabs-bar {
