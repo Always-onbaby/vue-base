@@ -14,12 +14,12 @@ Vue.component('my-component', {
     }
   },
   methods: {
-  handleEvent() {
+    handleEvent() {
       bus.$emit('on-message', this.msg)
-    },
+    }
   },
   render(cr) {
-    return cr('div',{on: {click: this.handleEvent}}, ['传递事件'])
+    return cr('div', { on: { click: this.handleEvent } }, ['传递事件'])
   }
 })
 export default {

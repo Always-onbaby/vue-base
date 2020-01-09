@@ -47,43 +47,43 @@ export default {
     return {
       goodsList: [
         {
-          name: "iphone11",
-          price: "2000",
+          name: 'iphone11',
+          price: '2000',
           count: 0
         },
         {
-          name: "iphone11Max",
-          price: "40000",
+          name: 'iphone11Max',
+          price: '40000',
           count: 0
         },
         {
-          name: "iphone11Pro",
-          price: "5000",
+          name: 'iphone11Pro',
+          price: '5000',
           count: 0
         },
         {
-          name: "iphone11ProMax",
-          price: "9000",
+          name: 'iphone11ProMax',
+          price: '9000',
           count: 0
         }
       ]
-    };
+    }
   },
   methods: {
     removeGoods(index) {
-      this.goodsList.splice(index, 1);
+      this.goodsList.splice(index, 1)
     }
   },
   computed: {
     getTotal() {
-      let total = 0;
+      let total = 0
       this.goodsList.forEach(item => {
-        total += parseInt(item.price * item.count);
-      });
-      return total.toString().replace(/\B(?=(\d{3})+$)/g, ",");
+        total += parseInt(item.price * item.count)
+      })
+      return total.toString().replace(/\B(?=(\d{3})+$)/g, ',')
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 * {

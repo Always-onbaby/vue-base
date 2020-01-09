@@ -6,27 +6,27 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-Vue.component("child-component", {
+import Vue from 'vue'
+Vue.component('child-component', {
   data() {
     return {
-      msg: "子组件的内容"
-    };
+      msg: '子组件的内容'
+    }
   },
   render(cr) {
-    let ex = cr("div", {
+    let ex = cr('div', {
       domProps: {
         innerHTML: this.msg
       }
-    });
-    return cr("div", [ex, this.$slots.default]);
+    })
+    return cr('div', [ex, this.$slots.default])
   }
-});
+})
 export default {
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 <style lang="less">
 </style>

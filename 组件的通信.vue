@@ -8,73 +8,73 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-Vue.component("my-component", {
+import Vue from 'vue'
+Vue.component('my-component', {
   data() {
     return {
       counter: 0
-    };
+    }
   },
   methods: {
     handleIncrease() {
-      this.counter++;
-      this.$emit("increase", this.counter);
+      this.counter++
+      this.$emit('increase', this.counter)
     },
     handleReduce() {
-      this.counter--;
-      this.$emit("reduce", this.counter);
+      this.counter--
+      this.$emit('reduce', this.counter)
     }
   },
   render(cr) {
     return cr(
-      "div",
+      'div',
       {
-        class: "child-wrap"
+        class: 'child-wrap'
       },
       [
         cr(
-          "button",
+          'button',
           {
             attrs: {
-              class: "btn"
+              class: 'btn'
             },
             on: {
               click: this.handleIncrease
             }
           },
-          ["+1"]
+          ['+1']
         ),
         cr(
-          "button",
+          'button',
           {
             attrs: {
-              class: "btn"
+              class: 'btn'
             },
             on: {
               click: this.handleReduce
             }
           },
-          ["-1"]
+          ['-1']
         )
       ]
-    );
+    )
   }
-});
+})
 export default {
   data() {
     return {
       total: 0
-    };
+    }
   },
   methods: {
     handleGetTotal(counter) {
-      this.total = counter;
+      this.total = counter
     },
     handleClick(ev) {
-      console.log(ev);
+      console.log(ev)
     }
   }
-};
+}
 </script>
 <style lang="less">
 .total-count {
