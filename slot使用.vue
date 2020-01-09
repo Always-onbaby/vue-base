@@ -19,7 +19,11 @@ Vue.component('child-component', {
         innerHTML: this.msg
       }
     })
-    return cr('div', [ex, this.$slots.default])
+    if (this.$slots.default === undefined) {
+      return ex
+    } else {
+      return cr('div', this.$slots.default)
+    }
   }
 })
 export default {

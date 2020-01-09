@@ -15,22 +15,32 @@ Vue 的`slot`主要分为：`单个插槽、具名插槽`和`作用域插槽`
   </div>
 </template>
 <script>
-  import Vue from 'vue'
-  Vue.component('child-component', {
-    data() {
-      return {
-        msg: '子组件的内容'
-      }
-    },
-    render(cr) {
-      let ex = cr('div',{domProps:{innerHTML:this.msg}})
-      return cr('div',[ex,this.$slots.default])
+import Vue from 'vue'
+Vue.component('child-component', {
+  data() {
+    return {
+      msg: '子组件的内容'
     }
-  })
-  export default {
-    data() {
-      return {}
+  },
+  render(cr) {
+    let ex = cr('div', {
+      domProps: {
+        innerHTML: this.msg
+      }
+    })
+    if (this.$slots.default === undefined) {
+      return ex
+    } else {
+      return cr('div', this.$slots.default)
     }
   }
+})
+export default {
+  data() {
+    return {}
+  }
+}
 </script>
 ```
+
+在`this.$slots.default`等于`undefined`时，说明父组件中并没有传递任何内容，使用默认模板替代。
