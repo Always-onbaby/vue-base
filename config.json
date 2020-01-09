@@ -1,0 +1,76 @@
+{
+	"gitlens.advanced.messages": {
+		"suppressShowKeyBindingsNotice": true
+	},
+	// "gitlens.historyExplorer.enabled": true,
+	"workbench.colorTheme": "One Dark Pro", // 设置vsCode的显示主题
+	"editor.minimap.enabled": true, // 控制右侧快速定位区域是否显示
+	//vm模板设置
+	"emmet.includeLanguages": {
+		"velocity": "html",
+		"vue-html": "html",
+		"vue": "html",
+		"wxml": "html"
+	},
+	"editor.fontFamily": "'Courier New', monospace", // 设置打开文件时不自动应用文件规则
+	"window.menuBarVisibility": "default",
+	"editor.tabSize": 2,
+	"window.zoomLevel": 0, // 编辑器缩放比例
+	"editor.formatOnSave": true, //保存时格式化
+	"breadcrumbs.enabled": true, //开启vscode文件路径导航
+	"prettier.semi": false, // prettier 设置语句末尾不加分号
+	"prettier.singleQuote": true,
+	"vetur.format.defaultFormatter.html": "prettyhtml", // 选择 vue 文件中 template 的格式化工具
+	"vetur.format.defaultFormatter.less": "prettier", //选择 Vue 文件中 less 的格式化工具
+	"editor.codeActionsOnSave": {
+		//在保存时自动调整import语句相关顺序，按照字母顺序排列
+		"source.organizeImports": true
+	},
+	// 设置打开项目时忽略显示的文件和文件夹
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/node_modules": true,
+		"**/.vscode": true
+	},
+	"editor.wordWrap": "on", // 编辑器的折行
+	"gitlens.views.fileHistory.enabled": true,
+	"gitlens.views.lineHistory.enabled": true,
+	"eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+	"editor.renderControlCharacters": true,
+	"editor.fontSize": 15,
+	"eslint.enable": false,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.cjson": "jsonc",
+		"*.wxss": "css",
+		"*.wxs": "javascript"
+	},
+	"minapp-vscode.disableAutoConfig": true,
+	"workbench.iconTheme": "vscode-icons",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"prettier.useTabs": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "octref.vetur"
+	},
+	"vetur.format.defaultFormatterOptions": {
+		"prettier": {
+			"semi": false, //不加分号
+			"singleQuote": true //用单引号
+		}
+	},
+	"editor.detectIndentation": false
+}

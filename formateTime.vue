@@ -5,17 +5,31 @@
   </div>
 </template>
 <script>
-import { Time } from './time/time'
+import Time from './time/time'
 import Vue from 'vue'
+Vue.directive('time', {
+  bind: (el, binding) => {
+    window.console.log(el)
+    el.innerHTML = Time.getFormatTime(binding.value)
+    el._timeOut = setInterval(() => {
+      el.innerHTML = Time.getFormatTime(binding.value)
+    }, 6000)
+  },
+  unbind: el => {
+    clearInterval(el._timeOut)
+    delete el._timeOut
+  }
+})
 export default {
   data() {
     return {
       timeNow: new Date().getTime(),
-      timeBefore: 1513123200000
+      timeBefore: new Date('2020-01-9 01:12').getTime()
     }
   },
-  monted() {
-    window.console.log(Time)
+
+  mounted() {
+    // window.console.log(Time)
   }
 }
 </script>

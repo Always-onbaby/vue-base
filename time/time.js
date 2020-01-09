@@ -1,4 +1,4 @@
-let Time = {
+const Time = {
 	/**获取时间戳 */
 	getUnix() {
 		let date = new Date()
@@ -26,19 +26,20 @@ let Time = {
 	},
 	/**获取标准年月日 */
 	getLastDate(time) {
-		let date = new Date(time)
+		let date = new Date(Number(time))
 		let month =
 			date.getMonth() + 1 < 10
 				? '0' + (date.getMonth() + 1)
 				: date.getMonth() + 1
-		let day = date.getDay() < 10 ? '0' + date.getDay() : date.getDay()
-		return `${date.getFullYear}-${month}-${day}`
+		let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+		window.console.log(date)
+		return `${date.getFullYear()}-${month}-${day}`
 	},
 	/**转化时间 */
 	getFormatTime(timestamp) {
-		let now = getUnix()
-		let today = getTodayUnix()
-		let year = getYearUnix()
+		let now = Time.getUnix()
+		let today = Time.getTodayUnix()
+		// let year = Time.getYearUnix()
 		let time = (now - timestamp) / 1000
 		let tip = ''
 		if (time < 0 || Math.floor(time / 60) <= 0) {
@@ -48,9 +49,9 @@ let Time = {
 		} else if (time > 3600 && time - today >= 0) {
 			tip = Math.floor(time / 3600) + '小时前'
 		} else if (time / 86400 <= 31) {
-			tip = time / 86400 + '天前'
+			tip = Math.floor(time / 86400) + '天前'
 		} else {
-			tip = getLastDate(timestamp)
+			tip = Time.getLastDate(timestamp)
 		}
 		return tip
 	}
