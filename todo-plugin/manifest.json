@@ -1,0 +1,35 @@
+{
+	"name": "todo-plugin",
+	"version": "0.1.0",
+	"description": "这是一个插件描述",
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["js/jquery.js", "js/background.js"]
+	},
+	"browser_action": {
+		"default_icon": "images/icon.png",
+		"default_title": "todo-plugin(状态栏显示名称)",
+		"default_popup": "popup.html",
+		"badge": "已登录"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["js/jquery.js", "js/content-script.js"],
+			"css": ["css/custom.css"],
+			"run_at": "document_start"
+		}
+	],
+	"permissions": [
+		"contextMenus",
+		"tabs",
+		"cookies",
+		"notifications",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"http://*/*",
+		"https://*/*",
+		"contextMenus"
+	]
+}
